@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Compose foundations</string>
+    <string name="material_icon">Material icon</string>
+    <string name="tinted_vector_icon">Tinted vector icon</string>
+    <string name="vector_icon_with_modifiers">Vector icon with modifiers</string>
+    <string name="simple_image">Simple image</string>
 </resources>
