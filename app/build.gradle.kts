@@ -29,6 +29,11 @@ android {
                 "proguard-rules.pro"
             )
         }
+        create("profile") {
+            initWith(getByName("debug"))
+            isDebuggable = false
+            isProfileable = true
+        }
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_19
@@ -70,4 +75,6 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-test-manifest")
 
     implementation("io.coil-kt:coil-compose:2.5.0")
+
+    implementation("com.github.javafaker:javafaker:1.0.2")
 }

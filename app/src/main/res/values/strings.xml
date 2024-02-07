@@ -4,4 +4,7 @@
     <string name="tinted_vector_icon">Tinted vector icon</string>
     <string name="vector_icon_with_modifiers">Vector icon with modifiers</string>
     <string name="simple_image">Simple image</string>
+    <string name="clicked_on">Clicked on %s</string>
+    <string name="user_photo">User photo</string>
+    <string name="delete_user">Delete user</string>
 </resources>
