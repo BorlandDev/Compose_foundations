@@ -75,6 +75,7 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-test-manifest")
 
     implementation("io.coil-kt:coil-compose:2.5.0")
-
     implementation("com.github.javafaker:javafaker:1.0.2")
+    implementation("androidx.lifecycle:lifecycle-runtime-compose:2.7.0")
+
 }
