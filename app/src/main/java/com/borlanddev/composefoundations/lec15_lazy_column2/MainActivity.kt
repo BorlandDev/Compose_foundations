@@ -1,6 +1,5 @@
 package com.borlanddev.composefoundations.lec15_lazy_column2
 
-import android.content.Context
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.ComponentActivity
@@ -105,7 +104,6 @@ class MainActivity : ComponentActivity() {
                 items = userList,
                 key = { user -> user.id }) { user ->
                 UserCard(
-                    context = context,
                     user = user,
                     onUserClicked = {
                         Toast.makeText(
@@ -125,7 +123,6 @@ class MainActivity : ComponentActivity() {
 
     @Composable
     fun UserCard(
-        context: Context,
         user: User,
         onUserClicked: () -> Unit,
         onUserDeleted: () -> Unit,
@@ -145,17 +142,16 @@ class MainActivity : ComponentActivity() {
                 }
         ) {
             Row(modifier = Modifier.padding(all = 8.dp)) {
-                UserImage(context = context, url = user.photoUrl)
+                UserImage(url = user.photoUrl)
                 Spacer(modifier = Modifier.width(16.dp))
                 UserInfo(user = user)
-                DeleteUserButton(context = context, onClick = onUserDeleted)
+                DeleteUserButton(onClick = onUserDeleted)
             }
         }
     }
 
     @Composable
     private fun UserImage(
-        context: Context,
         url: String
     ) {
         val placeholder = rememberVectorPainter(
@@ -164,7 +160,7 @@ class MainActivity : ComponentActivity() {
         AsyncImage(
             model = url,
             placeholder = placeholder,
-            contentDescription = context.getString(R.string.user_photo),
+            contentDescription = getString(R.string.user_photo),
             contentScale = ContentScale.Crop,
             modifier = Modifier
                 .size(64.dp)
@@ -201,7 +197,7 @@ class MainActivity : ComponentActivity() {
 
     @Composable
     private fun RowScope.DeleteUserButton(
-        context: Context,
+        //context: Context,
         onClick: () -> Unit
     ) {
         IconButton(
@@ -210,7 +206,7 @@ class MainActivity : ComponentActivity() {
         ) {
             Icon(
                 imageVector = Icons.Rounded.Delete,
-                contentDescription = context.getString(R.string.delete_user)
+                contentDescription = getString(R.string.delete_user)
             )
         }
     }

@@ -1,6 +1,5 @@
 package com.borlanddev.composefoundations.lec16_lazy_column3.ui
 
-import android.content.Context
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Column
@@ -31,7 +30,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.rememberVectorPainter
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
@@ -51,7 +50,6 @@ fun UserCard(
     onUserClicked: (() -> Unit)? = null,
     onUserDeleted: (() -> Unit)? = null
 ) {
-    val context = LocalContext.current
     Card(
         shape = RoundedCornerShape(size = 6.dp),
         elevation = CardDefaults.cardElevation(
@@ -65,17 +63,16 @@ fun UserCard(
             )
     ) {
         Row(modifier = Modifier.padding(all = 8.dp)) {
-            UserImage(context = context, url = user.photoUrl)
+            UserImage(url = user.photoUrl)
             Spacer(modifier = Modifier.width(16.dp))
             UserInfo(user = user)
-            DeleteUserButton(context = context, onClick = { onUserDeleted?.invoke() })
+            DeleteUserButton(onClick = { onUserDeleted?.invoke() })
         }
     }
 }
 
 @Composable
 private fun UserImage(
-    context: Context,
     url: String
 ) {
     val placeholder = rememberVectorPainter(
@@ -84,7 +81,7 @@ private fun UserImage(
     AsyncImage(
         model = url,
         placeholder = placeholder,
-        contentDescription = context.getString(R.string.user_photo),
+        contentDescription = stringResource(R.string.user_photo),
         contentScale = ContentScale.Crop,
         modifier = Modifier
             .size(64.dp)
@@ -121,7 +118,6 @@ private fun RowScope.UserInfo(
 
 @Composable
 private fun RowScope.DeleteUserButton(
-    context: Context,
     onClick: () -> Unit
 ) {
     IconButton(
@@ -130,7 +126,7 @@ private fun RowScope.DeleteUserButton(
     ) {
         Icon(
             imageVector = Icons.Rounded.Delete,
-            contentDescription = context.getString(R.string.delete_user)
+            contentDescription = stringResource(R.string.delete_user)
         )
     }
 }
