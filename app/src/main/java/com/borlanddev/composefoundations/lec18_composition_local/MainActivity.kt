@@ -21,30 +21,29 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            AppThemeContainer {
-                AppScreen()
-            }
+            AppScreen()
         }
     }
 
     @Preview(showSystemUi = true)
     @Composable
     fun AppScreen() {
-        val theme = LocalAppTheme.current
-        val themeController = LocalThemeController.current
-        Box(
-            contentAlignment = Alignment.Center,
-            modifier = Modifier
-                .fillMaxSize()
-                .background(theme.bgColor)
-        ) {
-            CustomButton(
-                onClick = {
-                    themeController.toggle()
-                },
-                text = stringResource(R.string.change_app_theme),
-
+        AppThemeContainer {
+            val theme = LocalAppTheme.current
+            val themeController = LocalThemeController.current
+            Box(
+                contentAlignment = Alignment.Center,
+                modifier = Modifier
+                    .fillMaxSize()
+                    .background(theme.bgColor)
+            ) {
+                CustomButton(
+                    onClick = {
+                        themeController.toggle()
+                    },
+                    text = stringResource(R.string.change_app_theme)
                 )
+            }
         }
     }
 

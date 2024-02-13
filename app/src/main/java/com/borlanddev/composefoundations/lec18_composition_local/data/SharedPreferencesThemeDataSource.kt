@@ -35,7 +35,7 @@ class SharedPreferencesThemeDataSource(
         )
     }
 
-    private fun hasSavedTheme(): Boolean = preferences.contains(THEME_PREFERENCES_NAME)
+    private fun hasSavedTheme(): Boolean = preferences.contains(KEY_BACKGROUND_COLOR)
 
     private companion object {
         const val THEME_PREFERENCES_NAME = "themes"

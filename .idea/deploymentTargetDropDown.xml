@@ -2,12 +2,6 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <value>
-      <entry key="AppScreen">
-        <State />
-      </entry>
-      <entry key="AppScreen (1)">
-        <State />
-      </entry>
       <entry key="AppScreen (2)">
         <State />
       </entry>
@@ -15,6 +9,12 @@
         <State />
       </entry>
       <entry key="AppScreen (4)">
+        <State />
+      </entry>
+      <entry key="Example01Center">
+        <State />
+      </entry>
+      <entry key="Example02Center">
         <State />
       </entry>
       <entry key="app">
