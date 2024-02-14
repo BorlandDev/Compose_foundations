@@ -12,7 +12,7 @@ import com.borlanddev.composefoundations.lec19_constraint_layout.Square
 
 @Preview(showSystemUi = true)
 @Composable
-fun Example07LinksIntro() {
+fun Example06LinksIntro() {
     ConstraintLayout(modifier = Modifier.fillMaxSize()) {
         val largeSquare = createRef()
         val (

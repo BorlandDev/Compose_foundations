@@ -10,7 +10,7 @@ import com.borlanddev.composefoundations.lec19_constraint_layout.Square
 
 @Preview(showSystemUi = true)
 @Composable
-fun Example06MarginV2() {
+fun Example05MarginV2() {
     ConstraintLayout(modifier = Modifier.fillMaxSize()) {
         Square(
             modifier = Modifier

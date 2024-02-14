@@ -17,7 +17,7 @@ import com.borlanddev.composefoundations.lec19_constraint_layout.Rectangle
 
 @Composable
 @Preview(showSystemUi = true)
-fun Example08LinksSize() {
+fun Example06LinksSize() {
     ConstraintLayout(modifier = Modifier.fillMaxSize()) {
         val (
             startBound,
